@@ -1,0 +1,22 @@
+server:
+  port: 8999
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    properties:
+      hibernate.hbm2ddl.auto: update
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      hibernate.physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      hibernate.show_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/smartscheme?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    primary:
+      min-evictable-idle-time-millis: 1800000
+      initial-size: 5
+      max-active: 50
+      max-wait: 60000
+      min-idle: 5
